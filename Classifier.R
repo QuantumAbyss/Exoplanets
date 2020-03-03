@@ -1,5 +1,6 @@
 #'
 #' Exoplanet Star Classification
+#' Data source: https://www.kaggle.com/keplersmachines/kepler-labelled-time-series-data
 #'
 
 ### INITIALIZATION --------------------------------------------------------------------------------
@@ -50,6 +51,8 @@ balanced <- trainClean
 #              perc.over = 100, perc.under=200)
 # balanced <- bind_rows(filter(trainClean, LABEL==2),
 #                       sample_n(filter(trainClean,LABEL==1), 37))
+
+### MODELING --------------------------------------------------------------------------------------
 
 rfModel <- randomForest(LABEL ~ ., data=balanced)
 
